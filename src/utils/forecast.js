@@ -12,8 +12,11 @@ const forecast = (lat,lon,callback) =>{
         const summary = body.daily.data[0].summary
         const temperature = body.currently.temperature
         const precipProbability = body.currently.precipProbability
+        const minTemp = body.daily.data[0].temperatureMin
+        const maxTemp = body.daily.data[0].temperatureMax
         callback(undefined,summary + ' the temperature is ' + temperature + 
-                ' degrees out and rain probabilty is ' + precipProbability + '%')
+                ' degrees out and rain probabilty is ' + precipProbability + '%\n The minimum temperature during the day is ' + minTemp + 
+                '° and the maximum temperature is ' + maxTemp+ '°')
     }
 })
 }
